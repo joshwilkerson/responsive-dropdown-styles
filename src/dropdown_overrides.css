@@ -1,0 +1,11 @@
+@media (max-width: 599px) {
+  .tds-dropdown-popover {
+    border-radius: var(--t-border-radius-lg);
+  }
+
+  .tds-dropdown-item {
+    padding-inline: var(--t-spacing-2);
+    padding-block: var(--t-spacing-1-half);
+    border-radius: var(--t-border-radius-lg);
+  }
+}

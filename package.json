@@ -8,17 +8,23 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "yarn build && gh-pages --dist dist --nojekyll"
   },
   "dependencies": {
+    "@planningcenter/icons": "^15.32.2",
+    "@planningcenter/tapestry": "^4.0.0",
     "react": "^19.2.8",
+    "react-aria": "^3.50.0",
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
+    "@types/gh-pages": "^6",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.4",
+    "gh-pages": "^6.3.0",
     "oxlint": "^1.75.0",
     "typescript": "~6.0.2",
     "vite": "^8.1.5"

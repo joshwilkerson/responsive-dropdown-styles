@@ -1,0 +1,14 @@
+
+.toolbar {
+  background: light-dark(var(--t-fill-color-neutral-010), var(--t-fill-color-neutral-100));
+
+  h1 {
+    font-size: var(--t-font-size-lg);
+    color: var(--t-text-color-inverted);
+  }
+
+  p {
+    font-size: var(--t-font-size-md);
+    opacity: 0.75;
+  }
+}
