@@ -1,13 +1,10 @@
+import { getFullImageSrc } from "./background_image_pairs"
 import { useResolvedColorMode } from "./utils/useResolvedColorMode"
-
-const SOURCES = {
-  light:
-    "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?fm=jpg&q=60&w=800&fit=crop",
-  dark: "https://images.unsplash.com/photo-1688494930098-e88c53c26e3a?fm=jpg&q=60&w=800&fit=crop",
-} as const
+import { useSelectedImagePair } from "./utils/useSelectedImagePair"
 
 export function BackgroundImage() {
   const { resolvedColorMode } = useResolvedColorMode()
+  const [selectedImagePair] = useSelectedImagePair()
 
   return (
     <>
@@ -19,7 +16,7 @@ export function BackgroundImage() {
             position: "absolute",
             inset: 0,
             zIndex: -1,
-            backgroundImage: `url("${SOURCES[mode]}")`,
+            backgroundImage: `url("${getFullImageSrc(selectedImagePair[mode])}")`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

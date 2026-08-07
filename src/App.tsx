@@ -1,7 +1,6 @@
 import { Flex } from "@planningcenter/tapestry"
 
 import { Toolbar } from "./Toolbar"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import { Frame } from "./Frame"
 
 const Container = ({ children }: { children: React.ReactNode }) => {
@@ -23,7 +22,7 @@ const Row = ({ children }: { children: React.ReactNode }) => {
 export const App = () => {
   return (
     <>
-      <Toolbar title="Tapestry/Dropdown" rightContent={<ColorModeSwitcher />} />
+      <Toolbar title="Tapestry/Dropdown" />
 
       <Container>
         <Row>

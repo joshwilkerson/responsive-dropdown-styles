@@ -1,16 +1,15 @@
-import styles from "./Toolbar.module.css"
 import { Flex } from "@planningcenter/tapestry"
-import "@planningcenter/tapestry/index.css"
-import type { ReactNode } from "react"
+import { ColorModeSwitcher } from "./ColorModeSwitcher"
+
+import styles from "./Toolbar.module.css"
+import { SelectImage } from "./SelectImage"
 
 export const Toolbar = ({
   title,
   subtitle,
-  rightContent,
 }: {
   title: string
   subtitle?: string
-  rightContent?: ReactNode
 }) => {
   return (
     <Flex
@@ -24,7 +23,10 @@ export const Toolbar = ({
         <h1>{title}</h1>
         {subtitle && <p>{subtitle}</p>}
       </Flex>
-      {rightContent}
+      <Flex gap={2}>
+        <SelectImage />
+        <ColorModeSwitcher />
+      </Flex>
     </Flex>
   )
 }
