@@ -17,12 +17,17 @@ export const Frame = ({
   component,
   width,
   label,
+  supportsLiquidGlass = false,
 }: {
   component: PreviewComponent
   width: number
   label: string
+  supportsLiquidGlass?: boolean
 }) => {
-  const params = new URLSearchParams({ component })
+  const params = new URLSearchParams({
+    component,
+    supportsLiquidGlass: String(supportsLiquidGlass),
+  })
 
   return (
     <div className={styles.frame}>

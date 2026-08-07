@@ -33,6 +33,12 @@ export const App = () => {
             width={380}
             component="ActionsMenu"
           />
+          <Frame
+            label="Mobile + Liquid Glass styles"
+            width={380}
+            component="ActionsMenu"
+            supportsLiquidGlass
+          />
         </Row>
         <Row>
           <Frame label="Default" width={620} component="ContactMenu" />
@@ -40,6 +46,12 @@ export const App = () => {
             label="Adjusted for mobile"
             width={380}
             component="ContactMenu"
+          />
+          <Frame
+            label="Mobile + Liquid Glass styles"
+            width={380}
+            component="ContactMenu"
+            supportsLiquidGlass
           />
         </Row>
       </Container>
