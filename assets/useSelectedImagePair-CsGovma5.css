@@ -1539,18 +1539,7 @@ summary{
 }
 }
 
-/*# sourceMappingURL=tokens-dark.css.map */:root {
-  color-scheme: light dark;
-}
-
-:root[data-color-mode="light"] {
-  color-scheme: light only;
-}
-
-:root[data-color-mode="dark"] {
-  color-scheme: dark only;
-}
-@layer t-critical, t-component;
+/*# sourceMappingURL=tokens-dark.css.map */@layer t-critical, t-component;
 
 :root{
   --t-border-radius-sm:2px;
@@ -7601,4 +7590,14 @@ a.tds-dropdown-item:is(:hover, :active){
 .tds-toggle-switch--hide-label{
   --tds-toggle-switch-display:inline-flex;
 }
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.css.map */:root {
+  color-scheme: light dark;
+}
+
+:root[data-color-mode="light"] {
+  color-scheme: light only;
+}
+
+:root[data-color-mode="dark"] {
+  color-scheme: dark only;
+}

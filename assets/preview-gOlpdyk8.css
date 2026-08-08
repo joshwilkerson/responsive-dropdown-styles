@@ -12,12 +12,23 @@
 
 [data-supports-liquid-glass] {
   --glass-surface: oklch(100% 0 0);
-  --glass-tint: oklch(from var(--glass-surface) l c h / 0.38);
+  --glass-tint: oklch(from var(--glass-surface) l c h / 0.34);
   --glass-shadow: oklch(20% 0.02 265);
 
-  --glass-blur: blur(10px);
-  --glass-brightness: 1.06;
-  --glass-saturation: 185%;
+  /*
+   * Tuned for legibility across arbitrary photos, which is the hard constraint
+   * here — dark text has nowhere to go over a dark, busy backdrop.
+   *
+   * The tint stays low so the scene reads through the panel; --glass-text-halo
+   * below is what keeps glyph edges intact, which is what buys that headroom.
+   * Blur does the rest: detail dissolves into an even field, and legible shapes
+   * behind text are worse than a flat wash however pretty. Saturation stays
+   * modest — pushing it makes the backdrop *more* colorful exactly where text
+   * needs a calm surface, which is what broke the foliage and lake photos.
+   */
+  --glass-blur: blur(13px);
+  --glass-brightness: 1.32;
+  --glass-saturation: 140%;
 
   --glass-illumination: saturate(var(--glass-saturation))
     brightness(var(--glass-brightness));
@@ -31,6 +42,14 @@
   --glass-contact: oklch(from var(--glass-shadow) l c h / 0.18);
 
   --glass-item-hover: oklch(from var(--glass-surface) 100% 0 h / 0.3);
+
+  /*
+   * A whisper of a halo in the surface color, so glyph edges keep a little
+   * separation wherever the backdrop lands close to the text color. Deliberately
+   * too faint to read as a shadow — it should only show up as the text not
+   * dissolving.
+   */
+  --glass-text-halo: 0 0 3px oklch(from var(--glass-surface) l c h / 0.5);
 
   --glass-radius: 1.65rem;
   --glass-inset: var(--t-spacing-1);
@@ -118,6 +137,7 @@
 
   .tds-dropdown-item {
     border-radius: var(--glass-item-radius);
+    text-shadow: var(--glass-text-halo);
   }
 
   .tds-dropdown-item[data-hovered]:not([data-disabled]),
